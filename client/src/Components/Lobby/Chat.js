@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import { Paper, TextField, Typography, IconButton, Icon, Container } from '@material-ui/core';
+import { Paper, IconButton, Icon, Container } from '@material-ui/core';
 import { Send } from '@material-ui/icons';
 import Input from './Input';
 import useStyles from './styles';

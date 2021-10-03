@@ -67,6 +67,8 @@ io.on('connection', socket => {
         socket.emit("new-message", payload);
     });
 
+    // Didn't have time to finish the disconnect for Sockets (Hackathon 24H constraint)
+
     // socket.on("disconnect", () => {
     //     users = users.filter(u => u.id != socket.id);
     //     io.emit("new user", users);

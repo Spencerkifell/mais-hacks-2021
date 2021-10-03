@@ -9,22 +9,19 @@ const StyledDiv = styled.div`
     justify-content: center;
     text-align: center;
 `;
-const StyledPre = styled.pre`
-    
-`;
 
 class Lobby extends React.Component {
     render (){
         var currentUser = localStorage.getItem('name');
         console.log(this.props.users);
         return (
-        <StyledDiv>
+        <pre>
             <h1>Current Game: {this.props.roomName}</h1>
             <h2>Room Id: {this.props.id}</h2>
             <h2>Current User: {currentUser}</h2>
-            <StyledPre>{this.props.rules}</StyledPre>
+            <pre>{this.props.rules}</pre>
             <Chat currentUser/>
-        </StyledDiv>
+        </pre>
         )
     }
 }

@@ -1,5 +1,3 @@
-const { default: axios } = require("axios");
-
 class Room{
     constructor(id, roomName, rules){
         this.id = id;
