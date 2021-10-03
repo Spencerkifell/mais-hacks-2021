@@ -1,4 +1,4 @@
-# mais-hacks-2021
+# boAIrd - MAIS Hacks 2021
 
 ## Inspiration
 - Our team was inspired by the many board games that we've enjoyed playing together. Most of the time we usually end up breaking the rules of the games we're playing and it gets chaotic so our goal was to create randomly generated chaotic games based off of user input so that people like us could get a good laugh out of it. We were curious if an AI would be able to generate its own custom games, so we put our curiosity to work.
@@ -47,3 +47,9 @@ What's Next?
   - Material-UI
 - Python
   - FastApi
+
+## Created By
+- Spencer Kifell
+- Jordan Marcus
+- Alex Barbeau
+- Joshua Weinstein
