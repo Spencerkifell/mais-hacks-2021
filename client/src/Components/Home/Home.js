@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useRef} from 'react';
 import { Container, Grow, Grid, Paper, Typography, Button, Icon } from '@material-ui/core' ;
 import { Build, Gamepad } from '@material-ui/icons';
 import Input from './Input';
@@ -14,6 +14,8 @@ function Home() {
 
     const [newRoomFormData, setNewRoomFormData] = useState(initialRoomState);
 
+    const socketRef = useRef();
+
     const handleCreateFormChange = (event) => {
         setNewRoomFormData({...newRoomFormData, [event.target.name]: event.target.value})
     }
@@ -24,7 +26,14 @@ function Home() {
         //generate random id...
         //create new user.
         socket.emit('create-room', newRoomFormData.title, newRoomFormData.title, newRoomFormData.name);
+        socket.on('hi', () => {
+            alert('hello');
+        })
     }
+
+    useEffect(() => {
+        
+    });
 
     return (
         <Grow in>

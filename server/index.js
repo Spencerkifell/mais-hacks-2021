@@ -5,7 +5,7 @@ const socket = require('socket.io');
 
 const app = express();
 const server = http.createServer(app);
-const io = socket(server);
+const io = socket(server, {cors: true, origins: ['http://localhost:4000']});
 
 app.use(cors());
 
@@ -22,9 +22,10 @@ io.on('connection', socket => {
             id: socket.id
         };
         rooms.set(roomId, {"id": roomId, "name": roomName, "messages": [], "currentUsers": [newUser]});
-        localStorage.setItem("userInfo", newUser);
         socket.join(roomId);
-        console.log("gottem");
+        console.log(socket.rooms, socket.id);
+        console.log(rooms);
+        socket.emit("hi");
     })
 
     socket.on("join-room", (room, userInfo) => {
