@@ -56,6 +56,16 @@ function Home() {
         setInRoom(true);
     })
 
+    //TODO Explain to the user why it failed (If we get the time)...
+    socket.on('failed-join', (reason) => {
+        switch(reason){
+            case "ID":
+                break;
+            case "NAME":
+                break;
+        }
+    })
+
     return (
         <Grow in>
             { !inRoom ? (

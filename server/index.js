@@ -34,12 +34,13 @@ io.on('connection', socket => {
         // Sets the current socket for the given user to the new room.
         socket.join(newRoom.id);
 
-        socket.emit("success-create", newRoom);
+        //Security Issue
+        socket.emit("success-create", rooms.get(newRoom.id));
     })
 
     socket.on("join-room", ({userName, roomId}) => {
         if(rooms.get(roomId) == null){
-            socket.emit("failed-join");
+            socket.emit("failed-join", "ID");
             return;
         }
             
@@ -58,12 +59,12 @@ io.on('connection', socket => {
         socket.emit("success-join", rooms.get(roomId));
     });
 
-    socket.on("send-message", ({ content, room, sender }) => {
+    socket.on("send-message", ({ content, sender }) => {
         const payload = {
             content,
             sender
         };
-        socket.to(room).emit("new-message", payload);
+        socket.emit("new-message", payload);
     });
 
     // socket.on("disconnect", () => {
@@ -81,7 +82,7 @@ app.get('/', (req, res) => {
 })
 
 function getRandomizedId(){
-    var regex = new reRegExp(/^[0-9,A-Z,a-z]{15}$/, {
+    var regex = new reRegExp(/^[0-9A-Za-z]{15}$/, {
         extractSetAverage: true
     });
 
