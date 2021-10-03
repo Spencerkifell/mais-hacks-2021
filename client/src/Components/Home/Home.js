@@ -1,11 +1,14 @@
-import React, {useEffect, useState, useRef} from 'react';
+import React, {useEffect, useState } from 'react';
 import { Container, Grow, Grid, Paper, Typography, Button, Icon } from '@material-ui/core' ;
 import { Build, Gamepad } from '@material-ui/icons';
 import Input from './Input';
 import useStyles from './styles';
 
 import io from 'socket.io-client';
+import Lobby from '../Lobby/Lobby';
 const socket = io.connect('http://localhost:4000');
+
+
 
 function Home() {
     const styles = useStyles();
@@ -13,8 +16,6 @@ function Home() {
     const initialRoomState = {name: "", title: ""};
 
     const [newRoomFormData, setNewRoomFormData] = useState(initialRoomState);
-
-    const socketRef = useRef();
 
     const handleCreateFormChange = (event) => {
         setNewRoomFormData({...newRoomFormData, [event.target.name]: event.target.value})

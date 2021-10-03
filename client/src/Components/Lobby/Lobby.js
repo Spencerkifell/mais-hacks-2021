@@ -1,11 +1,8 @@
 import React, {useState, useEffect} from 'react'
-import io from 'socket.io-client';
-const socket = io.connect('http://localhost:4000');
-
-function Lobby() {
+function Lobby({currentRoom}) {
     return (
         <div>
-            
+            <h1>Current Room: {currentRoom}</h1>
         </div>
     )
 }
