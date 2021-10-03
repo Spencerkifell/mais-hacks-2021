@@ -50,6 +50,14 @@ What's Next?
 
 ## Created By
 - Spencer Kifell
-- Jordan Marcus
-- Alex Barbeau
-- Joshua Weinstein
+  - [LinkedIn](https://www.linkedin.com/in/spencerkifell)
+  - [GitHub](https://github.com/Spencerkifell)
+- Jordan Marcus:
+  - [LinkedIn](https://www.linkedin.com/in/jordan-marcus)
+  - [GitHub](https://github.com/Jirbb)
+- Alex Barbeau:
+  - [LinkedIn](https://www.linkedin.com/in/alex-barbeau-706b051a5)
+  - [GitHub](https://github.com/TheFishFlopper)
+- Joshua Weinstein:
+  - [LinkedIn](https://www.linkedin.com/in/jedwardweinstein)
+  - [GitHub](https://github.com/Joshua-E-Weinstein)
