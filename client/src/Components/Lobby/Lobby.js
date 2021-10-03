@@ -9,8 +9,8 @@ const StyledDiv = styled.div`
     justify-content: center;
     text-align: center;
 `;
-const StyledHeader = styled.h1`
-
+const StyledPre = styled.pre`
+    
 `;
 
 class Lobby extends React.Component {
@@ -19,10 +19,10 @@ class Lobby extends React.Component {
         console.log(this.props.users);
         return (
         <StyledDiv>
-            <StyledHeader>{this.props.roomName}</StyledHeader>
             <h1>Current Game: {this.props.roomName}</h1>
             <h2>Room Id: {this.props.id}</h2>
             <h2>Current User: {currentUser}</h2>
+            <StyledPre>{this.props.rules}</StyledPre>
             <Chat currentUser/>
         </StyledDiv>
         )

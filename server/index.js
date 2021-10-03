@@ -18,14 +18,14 @@ let users = [];
 const rooms = new Map();
 
 io.on('connection', socket => {
-    socket.on('create-room', ({userName, title}) => {
+    socket.on('create-room', ({userName, title, rules}) => {
         const newUser = {
             user: userName,
             id: socket.id
         };
 
         let randomId = getRandomizedId();
-        var newRoom = new Room(randomId, title);
+        var newRoom = new Room(randomId, title, rules);
         
         // Adds the current user to the room they just created
         newRoom.addUser(newUser);

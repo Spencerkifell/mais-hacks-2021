@@ -3,6 +3,7 @@ import { Container, Grow, Grid, Paper, Typography, Button } from '@material-ui/c
 import { Build, Gamepad } from '@material-ui/icons';
 import Input from './Input';
 import useStyles from './styles';
+import axios from "axios";
 
 import io from 'socket.io-client';
 import Lobby from '../Lobby/Lobby';
@@ -35,7 +36,17 @@ function Home() {
     const createNewGame = (event) => {
         event.preventDefault();
         localStorage.setItem("name", newRoomFormData.name);
-        socket.emit('create-room', {userName: newRoomFormData.name, title: newRoomFormData.title});
+        var rulesToPass;
+        fetch(`http://weinsteininternet.ddns.net:8000/predict?input_str=${newRoomFormData.title}`)
+            .then((response) => {
+                return response.json();
+            })
+            .then((response) => {
+                socket.emit('create-room', {userName: newRoomFormData.name, title: newRoomFormData.title, rules: response?.prediction});
+            })
+            .catch((error) => {
+                console.log(error);
+            })
     }
 
     socket.on('success-create', (roomData) => {

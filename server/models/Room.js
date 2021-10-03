@@ -1,7 +1,10 @@
+const { default: axios } = require("axios");
+
 class Room{
-    constructor(id, roomName){
+    constructor(id, roomName, rules){
         this.id = id;
         this.roomName = roomName;
+        this.rules = rules;
         this.users = new Map();
         this.messages = [];
     }
